@@ -25,12 +25,12 @@
                         <th>Nombre</th>
                         <th>Edad</th>
                         <th>Correo</th>
-                        <th>Foto</th>
+                        <th>Calificacion {{alumnoTitle}}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let alumno of alumnosIric">
-                        <td><img *ngIf="muestraImg" [src]="alumno.imagen"
+                    <tr *ngFor="let alumno of alumnosIric | alumnoFilter:listfilter">
+                        <td><img *ngIf="muestraImg" [src]="alumno.foto"
                             [title]="alumno.nombre"
                             [style.width.px]="imageWidth"
                             [style.margin.px]="imageMargin"
@@ -39,6 +39,8 @@
                         <td>{{alumno.nombre}}</td>
                         <td>{{alumno.edad}}</td>
                         <td>{{alumno.correo}}</td>
+                        <td><app-calificacion-alum (calificaClick)="onCalificaClick($event)"
+                            [califica]="alumno.calificacion"></app-calificacion-alum></td>
                     </tr>
                 </tbody>
             </table>

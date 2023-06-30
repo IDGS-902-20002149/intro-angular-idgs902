@@ -8,11 +8,15 @@ import { Idgs902 } from './utl/idgs902.component';
 import { IdgsComponent } from './utl/idgs/idgs.component';
 import { IricComponent } from './utl/iric/iric.component';
 import { MenuComponent } from './utl/menu/menu.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SumaComponent } from './utl/formularios/suma/suma.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OperasbasComponent } from './utl/formularios/operasbas/operasbas.component';
-import {MatInputModule} from '@angular/material/input';
+import { OperasModule } from './utl/formularios/operas/operas.module';
+import { DospuntosModule } from './actividades/actividad1/dospuntos/dospuntos.module';
+import { ResistenciasComponent } from './actividades/actividad2/resistencias/resistencias.component';
+import { CalificacionAlumComponent } from './utl/calificacion-alum/calificacion-alum.component';
+import { AlumnoFilterPipe } from './utl/alumno-filter.pipe';
+import { AlumnoReactiveComponent } from './utl/formularios/alumno-reactive/alumno-reactive.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +27,19 @@ import {MatInputModule} from '@angular/material/input';
     IricComponent,
     MenuComponent,
     SumaComponent,
-    OperasbasComponent
+    ResistenciasComponent,
+    CalificacionAlumComponent,
+    AlumnoFilterPipe,
+    AlumnoReactiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatInputModule
+    OperasModule,
+    DospuntosModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
